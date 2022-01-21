@@ -1,8 +1,12 @@
 #!/bin/bash
-intRegExp='^[+]?[1-9]*\.?([0-9]+)+$'
+intRegExp='^[+-]?[1-9]*\.?([0-9]+)+$'
 
 unorderedOddList=()
 unorderedEvenList=()
+
+sortFunction(){
+    printf '%s\n' "$@" | sort -n
+}
 
 if [ $# -lt 1 ]; then
   echo "Arguments missing"
@@ -20,7 +24,7 @@ else
       unorderedOddList+=($i)
     fi
   done
-  echo "Even arguments are: " "${unorderedEvenList[@]}" | sort;
-  echo "Odds arguments are: " "${unorderedOddList[@]}" | sort;
+echo "even list contain $( printf "%s\n" "${unorderedEvenList[@]}" | sort -n )";
+echo "odd list contain $( printf "%s\n" "${unorderedOddList[@]}" | sort -n )";
   exit 0
 fi
