@@ -1,4 +1,8 @@
 #!/bin/bash
+###############################################################
+# the scrips gets integers(negative and positive) parameters  #
+# returned sorted arrays with even and odds parameters inside #
+###############################################################
 intRegExp='^[+-]?[1-9]*\.?([0-9]+)+$'
 
 unorderedOddList=()

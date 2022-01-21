@@ -1,4 +1,8 @@
 #!/bin/bash
+###############################################################
+# the scrips gets integers(0 and positive) parameters         #
+# returned factorial for each parameter                       #
+###############################################################
 positiveIntRegExp='^[0-9]+$'
 function sumIntFactorial() {
   local n=$1
