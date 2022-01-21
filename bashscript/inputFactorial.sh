@@ -17,9 +17,10 @@ if [ $# -lt 1 ]; then
   echo "Arguments count must be less then 1"
   exit 1
 else
-  for i in $@; do
-    if ! [[ $i =~ $positiveIntRegExp ]]; then
-      echo $i "is not a factorial based number, it should be positive int"
+  for i in $@;
+   do
+    if ! [[ $i =~ $positiveIntRegExp ]] || [[ $i -gt 63 ]]; then
+      echo $i "is not a factorial based number, it should be positive and les then 64 int"
        continue
     fi
     echo "$i factorial is " $(($(sumIntFactorial $i)))
