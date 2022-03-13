@@ -1,0 +1,13 @@
+version: "3"
+services:
+  nest-app:
+    build: .
+    ports:
+    - "3000:3000"
+    valumes:
+      ./mountedNest:/app
+    environment:
+      - PORT=3000
+      - NODE_ENV=production
+    command: node dist/main
+
